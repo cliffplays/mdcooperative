@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item 5 Preview</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <div class="brand-name">
+            <img src="logo.png" alt="Brand Logo" class="brand-logo">
+            <h1 class="brand-title">Cliffplayts Ent</h1>
+        </div>
+        <div class="profile-circle" onclick="window.location.href='login.html'" style="margin-right: 20px;">
+            <img src="path/to/profile-icon.png" alt="Profile" style="width: 100%; height: 100%; border-radius: 50%;">
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="container">
+        <div class="trustworthy-text">
+            <h2><b style="color: darkblue;">T</b>rustworthy<br>and <b style="color: green;">S</b>ecure</h2>
+        </div>
+        <div class="preview-images">
+            <img src="item5a.png" alt="Item 5 Image A" style="width: 100%; height: auto;">
+            <img src="item5b.png" alt="Item 5 Image B" style="width: 100%; height: auto;">
+            <img src="item5c.png" alt="Item 5 Image C" style="width: 100%; height: auto;">
+            <img src="item5d.png" alt="Item 5 Image D" style="width: 100%; height: auto;">
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

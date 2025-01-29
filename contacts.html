@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDCooperative Contact</title>
+    <link rel="stylesheet" href="cont.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <div class="brand-name">
+            <img src="logo.png" alt="Brand Logo" class="brand-logo">
+            <h1 class="brand-title">MDCooperative</h1>
+        </div>
+        <div class="profile-circle" onclick="window.location.href='login.html'" style="margin-right: 20px;">
+            <img src="path/to/profile-icon.png" alt="Profile" style="width: 100%; height: 100%; border-radius: 50%;">
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contacts.html">Contact</a>
+    </div>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need further information, please feel free to contact us through any of the following methods:</p>
+        <div class="cards">
+            <a href="https://wa.me/25423359167" class="card whatsapp-card">
+                <h3>WhatsApp</h3>
+                <p>Chat with us on WhatsApp for quick responses.</p>
+            </a>
+            <a href="tel:0723359167" class="card mobile-card">
+                <h3>Mobile</h3>
+                <p>Call us directly for immediate assistance.</p>
+            </a>
+            <a href="mailto:diwomamiller@gmail.com" class="card email-card">
+                <h3>Email</h3>
+                <p>Send us an email and we will get back to you as soon as possible.</p>
+            </a>
+            <a href="https://instagram.com/srt_cliff" class="card instagram-card">
+                <h3>Instagram</h3>
+                <p>Follow us on Instagram for the latest updates and promotions.</p>
+            </a>
+        </div>
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form action="mailto:info@mdcooperative.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

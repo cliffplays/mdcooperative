@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item 3 Preview</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <div class="brand-name">
+            <img src="logo.jpg" alt="Brand Logo" class="brand-logo">
+            <h1 class="brand-title">Cliffplayts Ent</h1>
+        </div>
+        <div class="profile-circle" onclick="window.location.href='login.html'" style="margin-right: 20px;">
+            <img src="path/to/profile-icon.jpg" alt="Profile" style="width: 100%; height: 100%; border-radius: 50%;">
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="container">
+        <div class="trustworthy-text">
+            <h2><b style="color: darkblue;">T</b>rustworthy<br>and <b style="color: green;">S</b>ecure</h2>
+        </div>
+        <div class="preview-images">
+            <img src="item3a.jpg" alt="Item 3 Image A" style="width: 100%; height: auto;">
+            <img src="item3b.jpg" alt="Item 3 Image B" style="width: 100%; height: auto;">
+            <img src="item3c.jpg" alt="Item 3 Image C" style="width: 100%; height: auto;">
+            <img src="item3d.jpg" alt="Item 3 Image D" style="width: 100%; height: auto;">
+        </div>
+        <div class="item-details">
+            <button onclick="buyNow()">Buy Now</button>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.classList.toggle('show');
+        }
+
+        function buyNow() {
+            const message = encodeURIComponent("I want to buy Item 3. Here is the link: https://yourwebsite.com/item3.html");
+            window.open(`https://wa.me/25423359167?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>

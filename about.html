@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MDCooperative</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <div class="brand-name">
+            <img src="logo.png" alt="Brand Logo" class="brand-logo">
+            <h1 class="brand-title">MDCooperative</h1>
+        </div>
+        <div class="profile-circle" onclick="window.location.href='login.html'" style="margin-right: 20px;">
+            <img src="path/to/profile-icon.png" alt="Profile" style="width: 100%; height: 100%; border-radius: 50%;">
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contacts.html">Contact</a>
+    </div>
+    <div class="container" style="padding-bottom: 20%;">
+        <div class="cards">
+            <div class="card">
+                <h3>Genuine and Certified Vehicles</h3>
+                <p>All our vehicles and motorbikes are genuine, certified, and legally sold. We ensure this by facilitating direct communication between the buyer and the seller. This process guarantees transparency and authenticity in every transaction.</p>
+                <button onclick="window.open('https://wa.me/254723359167', '_blank')">Contact on WhatsApp</button>
+            </div>
+            <div class="card">
+                <h3>Contact Information</h3>
+                <p>For more details, please contact us through the contact page.</p>
+            </div>
+            <div class="card">
+                <h3>100% Refunds</h3>
+                <p>We offer a 100% refund policy. If you are not satisfied with your purchase, please contact us and we will ensure you get your money back. Your satisfaction is our priority.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

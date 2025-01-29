@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDCooperative Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <div class="brand-name">
+            <img src="logo.jpg" alt="Brand Logo" class="brand-logo">
+            <h1 class="brand-title">MDCooperative</h1>
+        </div>
+        <div class="profile-circle" onclick="window.location.href='login.html'" style="margin-right: 20px;">
+            <img src="path/to/profile-icon.jpg" alt="Profile" style="width: 100%; height: 100%; border-radius: 50%;">
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contacts.html">Contact</a>
+    </div>
+    <div class="container" style="padding-bottom: 20%;">
+        <div class="trustworthy-text">
+            <h2><b style="color: darkblue;">T</b>rustworthy<br>and <b style="color: green;">S</b>ecure</h2>
+        </div>
+        <div class="search-filter">
+            <input type="text" placeholder="Search..." id="searchBar" onkeyup="filterCards()">
+            <button id="filterButton" onclick="filterCards()">Filter</button>
+        </div>
+        <div class="cards" id="cardsContainer">
+            <div class="card">
+                <img src="item1.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item1')" style="width: 128.25px; height: 150px;">
+                <h3>Honda cb125 (KMFM 125D)</h3>
+                <button onclick="buyNow('Item 1', 'item1.html')">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="item2.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item2')" style="width: 128.25px; height: 150px;">
+                <h3>Star</h3>
+                <button onclick="buyNow('Item 2', 'item2.html')">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="item3.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item3')" style="width: 128.25px; height: 150px;">
+                <h3>Item 3</h3>
+                <button onclick="buyNow('Item 3', 'item3.html')">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="item4.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item4')" style="width: 128.25px; height: 150px;">
+                <h3>Item 4</h3>
+                <button onclick="buyNow('Item 4', 'item4.html')">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="item5.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item5')" style="width: 128.25px; height: 150px;">
+                <h3>Item 5</h3>
+                <button onclick="buyNow('Item 5', 'item5.html')">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="item6.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item6')" style="width: 128.25px; height: 150px;">
+                <h3>Item 6</h3>
+                <button onclick="buyNow('Item 6', 'item6.html')">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="item7.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item7')" style="width: 128.25px; height: 150px;">
+                <h3>Item 7</h3>
+                <button onclick="buyNow('Item 7', 'item7.html')">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="item8.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item8')" style="width: 128.25px; height: 150px;">
+                <h3>Item 8</h3>
+                <button onclick="buyNow('Item 8', 'item8.html')">Buy Now</button>
+            </div>
+        </div>
+        <div class="contact-section">
+            <p>Oops, we can't seem to find any more items. Please choose the contact option to tell us what you're looking for.</p>
+            <button onclick="contactUs()">Contact Us</button>
+        </div>
+    </div>
+    <script>
+        function openPreview(item) {
+            window.location.href = `${item}.html`;
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.classList.toggle('show');
+        }
+
+        function contactUs() {
+            const message = encodeURIComponent("I want to buy...");
+            window.open(`https://wa.me/254723359167?text=${message}`, '_blank');
+        }
+
+        function filterCards() {
+            const searchInput = document.getElementById('searchBar').value.toLowerCase();
+            const cards = document.getElementById('cardsContainer').getElementsByClassName('card');
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+                const cardTitle = card.getElementsByTagName('h3')[0].innerText.toLowerCase();
+                if (cardTitle.includes(searchInput)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        }
+
+        function buyNow(item, itemLink) {
+            const message = encodeURIComponent(`I want to buy ${item}.This is the one that i want to buy: ${window.location.origin}/${itemLink}`);
+            window.open(`https://wa.me/254723359167?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
