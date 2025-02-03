@@ -12,7 +12,7 @@
             &#9776;
         </div>
         <div class="brand-name">
-            <img src="logo.jpg" alt="Brand Logo" class="brand-logo">
+            <img src="logo.png" alt="Brand Logo" class="brand-logo">
             <h1 class="brand-title">MDCooperative</h1>
         </div>
         <div class="profile-circle" onclick="window.location.href='login.html'" style="margin-right: 20px;">
@@ -29,48 +29,55 @@
             <h2><b style="color: darkblue;">T</b>rustworthy<br>and <b style="color: green;">S</b>ecure</h2>
         </div>
         <div class="search-filter">
-            <input type="text" placeholder="Search..." id="searchBar" onkeyup="filterCards()">
-            <button id="filterButton" onclick="filterCards()">Filter</button>
+            <input type="text" id="searchBar" placeholder="Search for items..." onkeyup="filterCards()">
         </div>
         <div class="cards" id="cardsContainer">
             <div class="card">
-                <img src="item1.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item1')" style="width: 128.25px; height: 150px;">
+                <img src="item1.jpg" alt="productimage" onerror="this.src='outofstock.jpg'" onclick="openPreview('item1')" style="width: 128.25px; height: 150px;">
                 <h3>Honda cb125 (KMFM 125D)</h3>
+                <p class="hidden-description">Description of Honda cb125.</p>
                 <button onclick="buyNow('Item 1', 'item1.html')">Buy Now</button>
             </div>
             <div class="card">
-                <img src="item2.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item2')" style="width: 128.25px; height: 150px;">
+                <img src="item2.jpg" alt="productimage" onerror="this.src='outofstock.jpg'" onclick="openPreview('item2')" style="width: 128.25px; height: 150px;">
                 <h3>Star BM100(KMGC 412D)</h3>
+                <p class="hidden-description">Description of Star BM100.</p>
                 <button onclick="buyNow('Item 2', 'item2.html')">Buy Now</button>
             </div>
             <div class="card">
-                <img src="item3.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item3')" style="width: 128.25px; height: 150px;">
+                <img src="item3.jpg" alt="productimage" onerror="this.src='outofstock.jpg'" onclick="openPreview('item3')" style="width: 128.25px; height: 150px;">
                 <h3>Item 3</h3>
+                <p class="hidden-description">Description of Item 3.</p>
                 <button onclick="buyNow('Item 3', 'item3.html')">Buy Now</button>
             </div>
             <div class="card">
-                <img src="item4.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item4')" style="width: 128.25px; height: 150px;">
+                <img src="item4.jpg" alt="productimage" onerror="this.src='outofstock.jpg'" onclick="openPreview('item4')" style="width: 128.25px; height: 150px;">
                 <h3>Item 4</h3>
+                <p class="hidden-description">Description of Item 4.</p>
                 <button onclick="buyNow('Item 4', 'item4.html')">Buy Now</button>
             </div>
             <div class="card">
-                <img src="item5.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item5')" style="width: 128.25px; height: 150px;">
+                <img src="item5.jpg" alt="productimage" onerror="this.src='outofstock.jpg'" onclick="openPreview('item5')" style="width: 128.25px; height: 150px;">
                 <h3>Item 5</h3>
+                <p class="hidden-description">Description of Item 5.</p>
                 <button onclick="buyNow('Item 5', 'item5.html')">Buy Now</button>
             </div>
             <div class="card">
-                <img src="item6.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item6')" style="width: 128.25px; height: 150px;">
+                <img src="item6.jpg" alt="productimage" onerror="this.src='outofstock.jpg'" onclick="openPreview('item6')" style="width: 128.25px; height: 150px;">
                 <h3>Item 6</h3>
+                <p class="hidden-description">Description of Item 6.</p>
                 <button onclick="buyNow('Item 6', 'item6.html')">Buy Now</button>
             </div>
             <div class="card">
-                <img src="item7.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item7')" style="width: 128.25px; height: 150px;">
+                <img src="item7.jpg" alt="productimage" onerror="this.src='outofstock.jpg'" onclick="openPreview('item7')" style="width: 128.25px; height: 150px;">
                 <h3>Item 7</h3>
+                <p class="hidden-description">Description of Item 7.</p>
                 <button onclick="buyNow('Item 7', 'item7.html')">Buy Now</button>
             </div>
             <div class="card">
-                <img src="item8.jpg" alt="productimage" onerror="this.src='outofstock.png'" onclick="openPreview('item8')" style="width: 128.25px; height: 150px;">
+                <img src="item8.jpg" alt="productimage" onerror="this.src='outofstock.jpg'" onclick="openPreview('item8')" style="width: 128.25px; height: 150px;">
                 <h3>Item 8</h3>
+                <p class="hidden-description">Description of Item 8.</p>
                 <button onclick="buyNow('Item 8', 'item8.html')">Buy Now</button>
             </div>
         </div>
@@ -100,7 +107,8 @@
             for (let i = 0; i < cards.length; i++) {
                 const card = cards[i];
                 const cardTitle = card.getElementsByTagName('h3')[0].innerText.toLowerCase();
-                if (cardTitle.includes(searchInput)) {
+                const cardDescription = card.getElementsByTagName('p')[0].innerText.toLowerCase();
+                if (cardTitle.includes(searchInput) || cardDescription.includes(searchInput)) {
                     card.style.display = '';
                 } else {
                     card.style.display = 'none';

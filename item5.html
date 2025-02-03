@@ -34,20 +34,21 @@
             <img src="item5c.png" alt="Item 5 Image C" style="width: 100%; height: auto;">
             <img src="item5d.png" alt="Item 5 Image D" style="width: 100%; height: auto;">
         </div>
-                <div class="item-details">
-            <img src="item4.jpg" alt="Item 4" onerror="this.src='outofstock.jpg'" style="width: 100%; height: auto;">
-            <h2>Item 4</h2>
-            <p>Description of Item 4.</p>
-            <button onclick="buyNow()">Buy Now</button>
-              </div>
+        <div class="item-details">
+            <img src="item5.jpg" alt="Item 5" onerror="this.src='outofstock.jpg'" style="width: 100%; height: auto;">
+            <h2>Item 5</h2>
+            <p>Description of Item 5.</p>
+            <button onclick="buyNow('Item 5', 'item5.html')">Buy Now</button>
+        </div>
     </div>
     <script>
         function toggleMenu() {
             const menu = document.getElementById('dropdownMenu');
             menu.classList.toggle('show');
         }
-                function buyNow() {
-            const message = encodeURIComponent("I want to buy Item 4. Here is the link: https://yourwebsite.com/item4.html");
+
+        function buyNow(item, itemLink) {
+            const message = encodeURIComponent(`I want to buy ${item}. Here is the link: ${window.location.origin}/${itemLink}`);
             window.open(`https://wa.me/254723359167?text=${message}`, '_blank');
         }
     </script>

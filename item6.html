@@ -34,7 +34,6 @@
             <img src="item6c.png" alt="Item 6 Image C" style="width: 100%; height: auto;">
             <img src="item6d.png" alt="Item 6 Image D" style="width: 100%; height: auto;">
         </div>
-        </div>
         <div class="item-details">
             <img src="item4.jpg" alt="Item 4" onerror="this.src='outofstock.jpg'" style="width: 100%; height: auto;">
             <h2>Item 4</h2>
@@ -51,6 +50,9 @@
             const message = encodeURIComponent("I want to buy Item 4. Here is the link: https://yourwebsite.com/item4.html");
             window.open(`https://wa.me/254723359167?text=${message}`, '_blank');
         }
+        document.querySelector('.item-details button').addEventListener('click', function() {
+            buyNow();
+        });
     </script>
 </body>
 </html>

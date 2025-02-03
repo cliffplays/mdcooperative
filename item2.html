@@ -38,7 +38,7 @@
             <img src="item2.jpg" alt="Item 2" onerror="this.src='outofstock.jpg'" style="width: 100%; height: auto;">
             <h2>Item 2</h2>
             <p>Description of Item 2.</p>
-            <button onclick="buyNow()">Buy Now</button>
+            <button onclick="buyNow('Item 2', 'item2.html')">Buy Now</button>
         </div>
     </div>
     <script>
@@ -47,8 +47,8 @@
             menu.classList.toggle('show');
         }
 
-        function buyNow() {
-            const message = encodeURIComponent("I want to buy Item 2. This is what i want: https://yourwebsite.com/item2.html");
+        function buyNow(item, itemLink) {
+            const message = encodeURIComponent(`I want to buy ${item}. Here is the link: ${window.location.origin}/${itemLink}`);
             window.open(`https://wa.me/254723359167?text=${message}`, '_blank');
         }
     </script>

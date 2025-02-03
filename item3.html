@@ -13,7 +13,7 @@
         </div>
         <div class="brand-name">
             <img src="logo.jpg" alt="Brand Logo" class="brand-logo">
-            <h1 class="brand-title">Cliffplayts Ent</h1>
+            <h1 class="brand-title">MDCooperative</h1>
         </div>
         <div class="profile-circle" onclick="window.location.href='login.html'" style="margin-right: 20px;">
             <img src="path/to/profile-icon.jpg" alt="Profile" style="width: 100%; height: 100%; border-radius: 50%;">
@@ -35,7 +35,7 @@
             <img src="item3d.jpg" alt="Item 3 Image D" style="width: 100%; height: auto;">
         </div>
         <div class="item-details">
-            <button onclick="buyNow()">Buy Now</button>
+            <button onclick="buyNow('Item 3', 'item3.html')">Buy Now</button>
         </div>
     </div>
     <script>
@@ -44,8 +44,8 @@
             menu.classList.toggle('show');
         }
 
-        function buyNow() {
-            const message = encodeURIComponent("I want to buy Item 3. Here is the link: https://yourwebsite.com/item3.html");
+        function buyNow(item, itemLink) {
+            const message = encodeURIComponent(`I want to buy ${item}. Here is the link: ${window.location.origin}/${itemLink}`);
             window.open(`https://wa.me/254723359167?text=${message}`, '_blank');
         }
     </script>
